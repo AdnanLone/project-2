@@ -1,0 +1,61 @@
+
+//extends layout
+
+a.btn.btn-info.pull-md-right(href='/auth/logout') Log Out
+
+block content
+  .main.container.clearfix
+    .row
+      .col-md-10.col-md-offset-2
+      if(user)
+        h1.display-4
+          img.avatar.img-circle.hidden-xs-down(src=user.photo alt='avatar')
+          | #{user.name}
+
+
+
+
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Midterm Project-Profile
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(src='css/styles.css', rel='stylesheet')
+  body
+    .container
+      .row
+        .col-xs-12
+          .panel.panel-default
+            .panel-body
+              span.glyphicon.glyphicon-cloud-upload
+              h2 File Uploader
+              .progress
+                .progress-bar(role='progressbar')
+              button.btn.btn-lg.upload-btn(type='button') Upload File
+    div
+      input#upload-input(type='file', name='uploads[]', multiple='multiple')
+      br
+    div
+      h5
+        | Show Uploaded files
+    button#target(type='button') Show Uploaded Files!
+    ul#list
+    script(src='https://code.jquery.com/jquery-2.2.0.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(src='javascripts/upload.js')
+    script(src='javascripts/getfiles.js')
+
+
+
+
+    // Include page dependencies
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='/vendor/intl-phone/js/intlTelInput.min.js')
+
+    // Our app's front-end JavaScript logic
+    //script(src='/app.js')
